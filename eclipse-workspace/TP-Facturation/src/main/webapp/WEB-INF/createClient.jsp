@@ -11,7 +11,7 @@
 	<body>
 		 <%@include file="commons/menu.jsp"%>
 		
-		<form action="create" method="post">
+		<form action="createClient" method="post">
 			 <label for="nomClient">Nom :</label> <input type="text" name="nomClient" />
 			 <label for="adressClient">Adress :</label> <input type="text" name="adressClient" />
 			 

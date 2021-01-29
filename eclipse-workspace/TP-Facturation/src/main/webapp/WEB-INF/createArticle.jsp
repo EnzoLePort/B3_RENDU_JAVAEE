@@ -11,7 +11,7 @@
 	<body>
 		 <%@include file="commons/menu.jsp"%>
 		
-		<form action="create" method="post">
+		<form action="createArticle" method="post">
 			 <label for="numeroArticle">Numero :</label> <input type="text" name="numeroArticle" />
 			 <label for="nomArticle">Nom :</label> <input type="text" name="nomArticle" />
 			 <label for="prixArticle">Prix :</label> <input type="text" name="prixArticle" />

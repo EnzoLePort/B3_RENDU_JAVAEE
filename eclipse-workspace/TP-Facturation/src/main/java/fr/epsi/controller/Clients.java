@@ -22,6 +22,8 @@ public class Clients extends HttpServlet{
 			clients.add(new Client("nom2","adress2"));
 		
 			req.setAttribute("clients", clients);
+			
+			System.out.println("------------------JE passe par ServletClient--------------------");
 		
 		   this.getServletContext().getRequestDispatcher("/WEB-INF/clients.jsp").forward(req, resp);
 	    }

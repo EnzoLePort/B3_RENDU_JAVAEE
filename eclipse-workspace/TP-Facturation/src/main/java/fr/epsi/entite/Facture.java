@@ -15,6 +15,14 @@ public class Facture {
 	private String numero;
 	private double prix;
 	
+	public Facture() {}
+	
+	public Facture(Date date, String numero, double prix) {
+		this.date = date;
+		this.numero = numero;
+		this.prix = prix;
+	}
+	
 	public Date getDate() {
 		return date;
 	}

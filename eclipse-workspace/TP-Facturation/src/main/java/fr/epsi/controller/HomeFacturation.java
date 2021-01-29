@@ -17,7 +17,7 @@ public class HomeFacturation extends HttpServlet{ // http://localhost:8080/TP-Fa
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 	        throws ServletException, IOException
 	    {
-			List<Facture> factures=new ArrayList<Facture>();
+			List<Facture> factures = new ArrayList<Facture>();
 			
 			factures.add(new Facture(new Date(),"001",500.01));
 			factures.add(new Facture(new Date(),"002",300.01));

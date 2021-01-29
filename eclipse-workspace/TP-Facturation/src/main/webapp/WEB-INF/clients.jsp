@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Facturations</title>
+		<title>Clients</title>
 		<%@include file="commons/header.jsp"%>
 	</head>
 	
@@ -15,21 +15,19 @@
 		<table>
 			<head>
 				<tr>
-					<th>N*</th>
-					<th>Date</th>
-					<th>Client</th>
-					<th>Prix</th>
+					<th>Nom</th>
+					<th>Adresse</th>
 				</tr>
 			</head>
-			<c:forEach var="facture" items="${factures}" >
+			<c:forEach var="client" items="${clients}" >
 				<tr>
-					<td><c:out value="${facture.numero}"></c:out></td>
-					<td><c:out value="${facture.date}"></c:out></td>
-					<td><c:out value="Client"></c:out></td>
-					<td><c:out value="${facture.prix}"></c:out></td>
+					<td><c:out value="${client.nom}"></c:out></td>
+					<td><c:out value="${client.adress}"></c:out></td>
 				</tr>
 			</c:forEach>
 		</table>
+		
+		<input type="button" value="AJOUTER UN CLIENT" onclick="window.location.href='createClient';" />
 		
 		<%@include file="commons/footer.jsp"%> 
 	</body>

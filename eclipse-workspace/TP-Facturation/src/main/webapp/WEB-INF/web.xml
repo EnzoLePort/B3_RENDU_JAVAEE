@@ -4,15 +4,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 	<display-name>TP-Facturation</display-name>
-	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-		<welcome-file>index.htm</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
-		<welcome-file>default.html</welcome-file>
-		<welcome-file>default.htm</welcome-file>
-		<welcome-file>default.jsp</welcome-file>
-	</welcome-file-list>
-
+	
 	<servlet>
 		<servlet-name>HomeFacturation</servlet-name>
 		<servlet-class>fr.epsi.controller.HomeFacturation</servlet-class>
@@ -21,6 +13,46 @@
 	<servlet-mapping>
 		<servlet-name>HomeFacturation</servlet-name>
 		<url-pattern>/home</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Clients</servlet-name>
+		<servlet-class>fr.epsi.controller.Clients</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Clients</servlet-name>
+		<url-pattern>/clients</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Articles</servlet-name>
+		<servlet-class>fr.epsi.controller.Articles</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Articles</servlet-name>
+		<url-pattern>/articles</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CreateClient</servlet-name>
+		<servlet-class>fr.epsi.controller.CreateClient</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CreateClient</servlet-name>
+		<url-pattern>/createClient</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CreateArticle</servlet-name>
+		<servlet-class>fr.epsi.controller.CreateArticle</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CreateArticle</servlet-name>
+		<url-pattern>/createArticle</url-pattern>
 	</servlet-mapping>
 
 </web-app>

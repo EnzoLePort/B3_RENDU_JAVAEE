@@ -10,9 +10,24 @@ public class Article {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	private String numero;
 	private String nom;
 	private double prix;
 	
+	public Article() {}
+	
+	public Article (String numero, String nom, double prix) {
+		this.numero = numero;
+		this.nom = nom;
+		this.prix = prix;
+	}
+	
+	public String getNumero() {
+		return numero;
+	}
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
 	public String getNom() {
 		return nom;
 	}

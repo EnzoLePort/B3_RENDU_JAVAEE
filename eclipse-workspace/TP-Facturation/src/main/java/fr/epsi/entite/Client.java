@@ -15,6 +15,13 @@ public class Client {
 	private String nom;
 	private String adress;
 	
+	public Client() {}
+	
+	public Client(String nom, String adress) {
+		this.nom = nom;
+		this.adress = adress;
+	}
+	
 	public String getNom() {
 		return nom;
 	}

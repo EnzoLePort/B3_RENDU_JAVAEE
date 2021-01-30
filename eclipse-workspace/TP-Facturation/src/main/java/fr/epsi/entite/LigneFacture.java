@@ -13,6 +13,16 @@ public class LigneFacture {
 	private int quantite;
 	private double prix;
 	
+	private Article article;
+	
+	public LigneFacture() {}
+	
+	public LigneFacture(int quantite, Article article) {
+		this.quantite = quantite;
+		this.article = article;
+		this.prix = article.getPrix() * quantite;
+	}
+	
 	public int getQuantite() {
 		return quantite;
 	}
@@ -24,6 +34,12 @@ public class LigneFacture {
 	}
 	public void setPrix(double prix) {
 		this.prix = prix;
+	}
+	public Article getArticle() {
+		return article;
+	}
+	public void setArticle(Article article) {
+		this.article = article;
 	}
 
 }

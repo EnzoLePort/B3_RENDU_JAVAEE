@@ -32,7 +32,7 @@ public class CreateArticle extends HttpServlet{
 			aDTO.setPrix(Double.valueOf(req.getParameter("prixArticle")));
 			service.create(aDTO);
 			
-			//this.getServletContext().getRequestDispatcher("/WEB-INF/articles.jsp").forward(req, resp);
+			this.getServletContext().getRequestDispatcher("/WEB-INF/articles.jsp").forward(req, resp);
 	    }
 
 }

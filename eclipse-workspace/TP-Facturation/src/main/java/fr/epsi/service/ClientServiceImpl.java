@@ -1,5 +1,8 @@
 package fr.epsi.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionManagement;
@@ -32,6 +35,22 @@ public class ClientServiceImpl implements ClientService {
 		
 		dao.create(client);
 		
+	}
+
+	public List<ClientDTO> getClients() {
+		List<ClientDTO> clientsDTO = new ArrayList<ClientDTO>();
+		ClientDAO dao = new ClientDAOImpl(em, utx);
+		
+		List<Client> clients = dao.getClients();
+		
+		for(Client client : clients) {
+			ClientDTO clientDTO = new ClientDTO();
+			clientDTO.setNom(client.getNom());
+			clientDTO.setAdress(client.getAdress());
+			clientsDTO.add(clientDTO);
+		}
+		
+		return clientsDTO;
 	}
 
 }

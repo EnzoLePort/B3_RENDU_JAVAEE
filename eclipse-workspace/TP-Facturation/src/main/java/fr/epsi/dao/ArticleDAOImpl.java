@@ -1,5 +1,7 @@
 package fr.epsi.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.transaction.HeuristicMixedException;
 import javax.transaction.HeuristicRollbackException;
@@ -21,13 +23,10 @@ public class ArticleDAOImpl implements ArticleDAO {
 	}
 
 	public void create(Article a) {
-		
-		System.out.println("----------------------ArticleDAOImpl-----------------------------");
 
 		try {
 			utx.begin();
 			em.persist(a);
-			
 			utx.commit();
 		} catch (NotSupportedException e) {
 			// TODO Auto-generated catch block
@@ -54,4 +53,36 @@ public class ArticleDAOImpl implements ArticleDAO {
 		
 	}
 
+	public List<Article> getArticles() {
+		
+		try {
+			utx.begin();
+			List<Article> articles =  em.createQuery("SELECT a FROM Article a",Article.class).getResultList();
+			utx.commit();
+			return articles;
+		} catch (NotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (RollbackException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (HeuristicMixedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (HeuristicRollbackException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+		
+	}
 }

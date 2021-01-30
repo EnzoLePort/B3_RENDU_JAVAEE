@@ -7,7 +7,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import fr.epsi.entite.Article;
 import fr.epsi.entite.Facture;
+import fr.epsi.entite.LigneFacture;
 
 import java.util.Date;
 
@@ -20,7 +23,7 @@ public class HomeFacturation extends HttpServlet{ // http://localhost:8080/TP-Fa
 			List<Facture> factures = new ArrayList<Facture>();
 			
 			factures.add(new Facture(new Date(),"001",500.01));
-			factures.add(new Facture(new Date(),"002",300.01));
+			factures.add(new Facture(new Date(),"002",new LigneFacture(2,new Article("x","tailleCrayon",5))));
 		
 			req.setAttribute("factures", factures);
 		

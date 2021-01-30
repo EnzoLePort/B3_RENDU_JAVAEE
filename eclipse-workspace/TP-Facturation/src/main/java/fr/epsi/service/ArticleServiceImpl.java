@@ -1,5 +1,8 @@
 package fr.epsi.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionManagement;
@@ -24,14 +27,6 @@ public class ArticleServiceImpl implements ArticleService {
 	UserTransaction utx;
 
 	public void create(ArticleDTO a) {
-		
-		System.out.println("--------ArticleServiceImpl---------------------");
-		System.out.println("a.getNumero() : "+a.getNumero());
-		System.out.println("a.getNom() : "+a.getNom());
-		System.out.println("a.getPrix()");
-		System.out.println(a.getPrix());
-		System.out.println();
-		System.out.println();
 
 		Article article = new Article();
 		article.setNumero(a.getNumero());
@@ -42,5 +37,24 @@ public class ArticleServiceImpl implements ArticleService {
 		dao.create(article);
 		
 	}
+
+	public List<ArticleDTO> getArticles() {
+		List<ArticleDTO> articlesDTO = new ArrayList<ArticleDTO>();
+		ArticleDAO dao = new ArticleDAOImpl(em, utx);
+		
+		List<Article> articles = dao.getArticles();
+		
+		for(Article article : articles) {
+			ArticleDTO articleDTO = new ArticleDTO();
+			articleDTO.setNumero(article.getNumero());
+			articleDTO.setNom(article.getNom());
+			articleDTO.setPrix(article.getPrix());
+			articlesDTO.add(articleDTO);
+		}
+		
+		return articlesDTO;
+	}
+	
+	
 
 }
